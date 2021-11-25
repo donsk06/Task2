@@ -1,4 +1,3 @@
-#wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/donsk06/Task2/master/gender_submission.csv -O dataset2.csv
 #!/bin/bash
 while getopts I:R:G:L: flag
 do
@@ -20,4 +19,3 @@ awk -v train_rows=$train_num 'NR<train_rows {print}' $input > $folder/train.csv
 awk 'NR==1 {print}' $input > $folder/validation_samples.csv
 awk -v validation_samples_rows=$train_num 'NR>=validation_samples_rows {print}' $input >> $folder/validation_samples.csv
 
-# sh script2.sh -M /home/donsk/task2/dataset2.csv -R 80 -G "Survived" -L /home/donsk/task2/part2
